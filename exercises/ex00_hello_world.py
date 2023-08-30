@@ -1,5 +1,4 @@
 """My first program for COMP110"""
+"730711512"
 
-__730711512__
 print ("Hello, world.")
-
