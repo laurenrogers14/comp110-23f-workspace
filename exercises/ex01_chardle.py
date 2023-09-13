@@ -36,8 +36,8 @@ if word_chardle[4] == letter_chardle:
     print(letter_chardle + " found at index 4 ")
     count += 1
 
-print(str(count) + "instance of" + letter_chardle + "found in" + word_chardle)
+print(str(count) + "instances of" + letter_chardle + "found in" + word_chardle)
 
-print(str(count) + " instances of " + letter_chardle + " found in " + word_chardle) 
+print(str(count) + " instance of " + letter_chardle + " found in " + word_chardle) 
 
 print(" No instances of " + letter_chardle + " found in " + word_chardle)
