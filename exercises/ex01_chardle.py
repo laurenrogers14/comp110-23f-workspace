@@ -2,19 +2,39 @@
 
 __author__ = "730711512"
 
-user_input1: str = "bakes"
-user_input2: str = "b"
+word: str = input("Enter a 5-character word: ")
+letter: str = input("Enter a single character: ")
 
-if(str(user_input1[0])) = str(lauren[0]):
-   print("Hooray!")
+if word[0] == letter:
+    print(letter + " found at index 0")
 
-if(str(user_input1[1])):
-   
-if(str(user_input1[2])):
-   
-if(str(user_input2[3])):
-   
-if(str(user_input1[3])):
-   
+if word[1] == letter:
+    print(letter + " found at index 1")
+
+if word[2] == letter:
+    print(letter + " found at index 2")
+
+if word[3] == letter:
+    print(letter + " found at index 3")
+
+if word[0] == letter:
+    print(letter + " found at index 0" + "1 instance of e found in word")
+else:
+    print( "No instances of" + letter +  " found in word.")
+
+if word[1] == letter:
+    print(letter + " found at index 1" + "1 instance of e found in word")
+else:
+    print( "No instances of" + letter +  " found in word.")
+
+if word[2] == letter:
+    print(letter + " found at index 2" + "1 instance of e found in word")
+else:
+    print( "No instances of" + letter + " found in word.")
+
+if word[3] == letter:
+    print(letter + " found at index 3" + "1 instance of e found in word")
+else:
+    print( "No instances of" + letter + " found in word.")
 
 
