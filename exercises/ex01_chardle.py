@@ -5,6 +5,13 @@ __author__ = "730711512"
 word: str = input("Enter a 5-character word: ")
 letter: str = input("Enter a single character: ")
 
+if (len(help) !=5):
+    print("Error: Word must contain 5 characters")
+    exit()
+
+if (len(letter) !=1):
+    print ("Error: Character must be a single character.")
+
 if word[0] == letter:
     print(letter + " found at index 0")
 
@@ -16,6 +23,9 @@ if word[2] == letter:
 
 if word[3] == letter:
     print(letter + " found at index 3")
+
+if word[4] == letter:
+    print(letter + " found at index 4")
 
 if word[0] == letter:
     print(letter + " found at index 0" + "1 instance of e found in word")
