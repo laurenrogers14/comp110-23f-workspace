@@ -37,4 +37,3 @@ if word_chardle[4] == letter_chardle:
     count += 1
 
 print(count + " instance of " + letter_chardle + " found in " + word_chardle) 
-print(" No instances of " + letter_chardle  + " found in " + word_chardle)
