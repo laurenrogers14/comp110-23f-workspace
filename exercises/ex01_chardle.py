@@ -3,18 +3,18 @@ __author__ = "730711512"
  
 word_chardle: str = input("Enter a 5-character word: ")
 
-if len(word_chardle) !=5:
+if len(word_chardle) != 5:
     print(" Error: Word must contain 5 characters. ")
     exit()
     
 letter_chardle: str = input("Enter a single character: ")
 
-if len(letter_chardle) !=1:
-    print (" Error: Character must be a single character. ")
+if len(letter_chardle) != 1:
+    print(" Error: Character must be a single character. ")
     exit()
 
 count = 0
-print (" Searching for " + letter_chardle + " in " + word_chardle)
+print(" Searching for " + letter_chardle + " in " + word_chardle)
 
 if word_chardle[0] == letter_chardle:
     print(letter_chardle + " found at index 0 ")
@@ -36,4 +36,4 @@ if word_chardle[4] == letter_chardle:
     print(letter_chardle + " found at index 4 ")
     count += 1
 
-print (str(count) + " instance of " + letter_chardle + " found in " + word_chardle) 
+print(str(count) + " instances of " + letter_chardle + " found in " + word_chardle) 
