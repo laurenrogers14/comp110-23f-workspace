@@ -1,50 +1,34 @@
 """EX01 - Chardle - A cute step toward Wordle."""
-
 __author__ = "730711512"
+ 
+word_chardle: str = input("Enter a 5-character word: ")
+letter_chardle: str = input("Enter a single character: ")
 
-word: str = input("Enter a 5-character word: ")
-letter: str = input("Enter a single character: ")
-
-if (len(help) !=5):
-    print("Error: Word must contain 5 characters")
+if len(word_chardle) !=5:
+    print("Error: Word must contain 5 characters.")
     exit()
 
-if (len(letter) !=1):
+if len(letter_chardle) !=1:
     print ("Error: Character must be a single character.")
+    exit()
 
-if word[0] == letter:
-    print(letter + " found at index 0")
+count = 0
+print ("Searching for" + letter_chardle + "in" + word_chardle)
 
-if word[1] == letter:
-    print(letter + " found at index 1")
+if word_chardle[0] == letter_chardle:
+    print(letter_chardle + " found at index 0 ")
+    count += 1
 
-if word[2] == letter:
-    print(letter + " found at index 2")
+if word_chardle[1] == letter_chardle:
+    print(letter_chardle + " found at index 1 ")
+    count += 1
 
-if word[3] == letter:
-    print(letter + " found at index 3")
+if word_chardle[2] == letter_chardle:
+    print(letter_chardle + " found at index 2 ")
+    count += 1
 
-if word[4] == letter:
-    print(letter + " found at index 4")
+if word_chardle[3] == letter_chardle:
+    print(letter_chardle + " found at index 3 ")
+    count += 1
 
-if word[0] == letter:
-    print(letter + " found at index 0" + "1 instance of e found in word")
-else:
-    print( "No instances of" + letter +  " found in word.")
-
-if word[1] == letter:
-    print(letter + " found at index 1" + "1 instance of e found in word")
-else:
-    print( "No instances of" + letter +  " found in word.")
-
-if word[2] == letter:
-    print(letter + " found at index 2" + "1 instance of e found in word")
-else:
-    print( "No instances of" + letter + " found in word.")
-
-if word[3] == letter:
-    print(letter + " found at index 3" + "1 instance of e found in word")
-else:
-    print( "No instances of" + letter + " found in word.")
-
-
+print(str(count) + "instance of" + letter_chardle + "found in" word_chardle) 
