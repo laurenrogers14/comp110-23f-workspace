@@ -13,16 +13,51 @@ if len(secret_word_guess) != secret_word:
 if secret_word_guess == secret_word:
     print("Woo! You got it!")
 
-secret_word_guess_idx: chr = 0
+secret_word_guess_idx: int = 0 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
 while secret_word[0] == secret_word_guess:
     print("\U0001F7E9")
-if secret_word [0] != secret_word_guess:
-    print ("\U00002B1C")
-    secret_word_guess_idx = secret_word_guess_idx + 1
+    if secret_word [0] != secret_word_guess:
+        print ("\U00002B1C")
+        secret_word_guess_idx = secret_word_guess_idx + 1
+
+while secret_word[1] == secret_word_guess:
+    print("\U0001F7E9")
+    if secret_word [1] != secret_word_guess:
+        print ("\U00002B1C")
+        secret_word_guess_idx = secret_word_guess_idx + 1
+
+while secret_word[2] == secret_word_guess:
+    print("\U0001F7E9")
+    if secret_word [2] != secret_word_guess:
+        print ("\U00002B1C")
+        secret_word_guess_idx = secret_word_guess_idx + 1
+
+while secret_word[3] == secret_word_guess:
+    print("\U0001F7E9")
+    if secret_word [3] != secret_word_guess:
+        print ("\U00002B1C")
+        secret_word_guess_idx = secret_word_guess_idx + 1
+
+while secret_word[4] == secret_word_guess:
+    print("\U0001F7E9")
+    if secret_word [4] != secret_word_guess:
+        print ("\U00002B1C")
+        secret_word_guess_idx = secret_word_guess_idx + 1
+
+while secret_word[5] == secret_word_guess:
+    print("\U0001F7E9")
+    if secret_word [5] != secret_word_guess:
+        print ("\U00002B1C")
+        secret_word_guess_idx = secret_word_guess_idx + 1
+
+
+
+
+
 
 
 
