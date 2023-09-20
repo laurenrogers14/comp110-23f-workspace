@@ -1,4 +1,4 @@
-"""EX02 - One shot Wordle"""
+"""EX02 - One shot Wordle."""
 __author__ = "730711512"
 
 secret_word_guess: str = input("What is your 6-letter guess? ")
@@ -36,8 +36,6 @@ while secret_word_guess_idx < len(secret_word):
 print(emoji_string)
 
 if secret_word == secret_word_guess:
-    print ("Woo! You got it! ")
+    print("Woo! You got it! ")
 else: 
     print("Not quite. Play again soon! ")
-    
-
