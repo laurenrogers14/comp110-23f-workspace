@@ -9,12 +9,14 @@ YELLOW_BOX: str = "\U0001F7E8"
 def contains_char(any_length: str, single_character: str) -> bool:
     """Returns True if the single character is found at any index of the first string."""
     assert len(single_character) == 1
-    #write a while loop going through each index of any_length.  if the single character matches any of these indexes, you can return True.
-    while len(any_length) > single_character:
-        if any_length[single_character]:
+    # write a while loop going through each index of any_length.  if the single character matches any of these indexes, you can return True.
+    index = 0
+    while len(any_length) > index:
+        if any_length[index] == single_character:
             return True
-        else:
-            return False
+        index += 1
+        
+    return False
 
 def emojified(string_guess: str, string_secret: str) -> str:
     """This function checks for correct emoji matches indices."""
@@ -35,8 +37,8 @@ def emojified(string_guess: str, string_secret: str) -> str:
         
 def input_guess(expected_length: int) -> str:
     secret_word_guess: str = input(f"Enter a {expected_length} character letter word: ")
-    while secret_word_guess != expected_length:
-        if len(secret_word_guess) > len(expected_length) or len(secret_word_guess) < len(expected_length):
+    while len(secret_word_guess) != expected_length:
+        if len(secret_word_guess) != len(expected_length):
             secret_word_guess = input(f"That wasn't {expected_length} chars! Try again: ")
     return secret_word_guess
 
