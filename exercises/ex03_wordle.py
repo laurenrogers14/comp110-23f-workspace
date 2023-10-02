@@ -27,10 +27,10 @@ def emojified(string_guess: str, string_secret: str) -> str:
     while string_guess_idx <= total:
         if contains_char(string_guess, string_secret[string_guess_idx]) is True and string_guess[string_guess_idx] != string_secret[string_guess_idx]:
             emoji += YELLOW_BOX
-        if contains_char(string_guess, string_secret[string_guess_idx]) is True and string_guess[string_guess_idx] == string_secret[string_guess_idx]:
+        elif contains_char(string_guess, string_secret[string_guess_idx]) is True and string_guess[string_guess_idx] == string_secret[string_guess_idx]:
             emoji += GREEN_BOX
-        if contains_char(string_guess, string_secret[string_guess_idx]) is False:
-            emoji += WHITE_BOX
+        else: contains_char(string_guess, string_secret[string_guess_idx]) is False
+        emoji += WHITE_BOX
         string_guess_idx += 1
     return emoji
 
@@ -55,11 +55,11 @@ def main() -> None:
         print(emojified(string_guess, string_secret))
         if count <= 6 and string_guess != string_secret:
             count += 1
-        if count >= 1 and string_guess == string_secret:
+        elif count >= 1 and string_guess == string_secret:
             print(f"You won in {count}/6 turns! ")
-        if count == 7:
-            print("X/6 -- Sorry, try again tomorrow!")
-            string_guess = string_secret
+        else: count == 7
+        print("X/6 -- Sorry, try again tomorrow!")
+        string_guess = string_secret
             
 
 if __name__ == "__main__": 
