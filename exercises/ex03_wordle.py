@@ -32,10 +32,11 @@ def emojified(string_guess: str, string_secret: str) -> str:
 
         
 def input_guess(expected_length: int) -> str:
-    secret_word_guess: str = input(f"Enter a {expected_length} character letter word")
+    expected_length: int == 5
+    secret_word_guess: str = input(f"Enter a {expected_length} character letter word: ")
     while secret_word_guess != expected_length:
         if len(secret_word_guess) > len(expected_length) or len(secret_word_guess) < len(expected_length):
-            secret_word_guess = input(f"That wasn't {expected_length} chars! Try again")
+            secret_word_guess = input(f"That wasn't {expected_length} chars! Try again: ")
     return secret_word_guess
 
 string_secret: str = "codes"
@@ -48,13 +49,15 @@ def main() -> None:
     while string_guess != string_secret:
         print(f"===Turn {count}/6===")
         string_guess == input_guess(len(string_secret))
-        print(emojified(string_guess, string_secret))
+        print(emojified (string_guess, string_secret))
         if count <= 6 and string_guess != string_secret:
             count += 1
-        if count <= 6 and string_guess == string_secret:
+        if count >= 1 and string_guess == string_secret:
             print(f"You won in {count}/6 turns! ")
         if count == 7:
             print("X/6 -- Sorry, try again tomorrow!")
+            string_guess = string_secret
+            
 
 if __name__ == "__main__": 
     main()
