@@ -9,10 +9,12 @@ YELLOW_BOX: str = "\U0001F7E8"
 def contains_char(any_length: str, single_character: str) -> bool:
     """Returns True if the single character is found at any index of the first string."""
     assert len(single_character) == 1
-    if single_character in any_length:
-        return True
-    else:
-        return False
+    #write a while loop going through each index of any_length.  if the single character matches any of these indexes, you can return True.
+    while len(any_length) > single_character:
+        if any_length[single_character]:
+            return True
+        else:
+            return False
 
 def emojified(string_guess: str, string_secret: str) -> str:
     """This function checks for correct emoji matches indices."""
@@ -21,18 +23,17 @@ def emojified(string_guess: str, string_secret: str) -> str:
     string_guess_idx = 0
     total: int = len(string_guess) - 1
     while string_guess_idx <= total:
-        if contains_char(string_guess, string_secret[string_guess_idx]) is True and string_guess[string_guess_idx] != string_secret:
+        if contains_char(string_guess, string_secret[string_guess_idx]) is True and string_guess[string_guess_idx] != string_secret[string_guess_idx]:
             emoji += YELLOW_BOX
-        if contains_char(string_guess, string_secret[string_guess_idx]) is True and string_guess[string_guess_idx] == string_secret:
+        if contains_char(string_guess, string_secret[string_guess_idx]) is True and string_guess[string_guess_idx] == string_secret[string_guess_idx]:
             emoji += GREEN_BOX
         if contains_char(string_guess, string_secret[string_guess_idx]) is False:
             emoji += WHITE_BOX
         string_guess_idx += 1
-    return (emoji)
+    return emoji
 
         
 def input_guess(expected_length: int) -> str:
-    expected_length: int == 5
     secret_word_guess: str = input(f"Enter a {expected_length} character letter word: ")
     while secret_word_guess != expected_length:
         if len(secret_word_guess) > len(expected_length) or len(secret_word_guess) < len(expected_length):
@@ -49,7 +50,7 @@ def main() -> None:
     while string_guess != string_secret:
         print(f"===Turn {count}/6===")
         string_guess == input_guess(len(string_secret))
-        print(emojified (string_guess, string_secret))
+        print(emojified(string_guess, string_secret))
         if count <= 6 and string_guess != string_secret:
             count += 1
         if count >= 1 and string_guess == string_secret:
