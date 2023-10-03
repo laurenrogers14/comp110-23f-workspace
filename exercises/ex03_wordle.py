@@ -17,7 +17,6 @@ def contains_char(any_length: str, single_character: str) -> bool:
         if any_length[index] == single_character:
             return True
         index += 1
-        
     return False
 
 def emojified(string_guess: str, string_secret: str) -> str:
@@ -29,7 +28,7 @@ def emojified(string_guess: str, string_secret: str) -> str:
         if string_guess[string_guess_idx] == string_secret[string_guess_idx]:
             emoji += GREEN_BOX
         else: 
-            word: bool = contains_char(string_guess, string_secret)
+            word: bool = contains_char(string_guess, string_secret[string_guess_idx])
             if word is True:
                 emoji += YELLOW_BOX
             else:
@@ -40,10 +39,12 @@ def emojified(string_guess: str, string_secret: str) -> str:
         
 def input_guess(expected_length: int) -> str:
     """Provide a guess of expected length"""
-    guess_input = input(f" Enter a {expected_length} character word: ")
-    while len(guess_input) != len(expected_length):
-        guess_input = input(f" Enter a {(expected_length)} character word: ")
-    return guess_input
+    string_guess = input(f" Enter a {expected_length} character word:")
+    string_secret: str
+    string_guess: str
+    while len(string_guess) != expected_length:
+        string_guess = input(f" That wasn't {(expected_length)} chars! Try again: ")
+    return expected_length
 
 def main() -> None:
     """The extry point of the program and main game loop."""
@@ -51,16 +52,16 @@ def main() -> None:
     you_won = False
     count = 1
     while not you_won and count < 7:
-        print(f"===Turn {count}/6 ===")
+        print(f"===Turn {(count)}/6 ===")
         string_guess ==input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
         if string_guess == string_secret:
-            print(f"you won in {count}/6 turns! ")
+            print(f"you won in {(count)}/6 turns!")
             has_won = True
             exit
         count += 1
         if not you_won:
-            print("X/6 -- Sorry, try again tomorrow! ")       
+            print("X/6 -- Sorry, try again tomorrow!")       
 
 if __name__ == "__main__": 
     main()
