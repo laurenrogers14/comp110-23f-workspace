@@ -50,20 +50,20 @@ def input_guess(expected_length: int) -> str:
 def main() -> None:
     """The extrypoint of the program and main game loop."""
     you_won = False
-    count: int  = 1
+    count = 1
 
     while not you_won and count < 6:
         print(f"=== Turn {(count)}/6 ===")
         string_guess == input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
         if string_guess == string_secret:
-            print(f"you won in {(count)}/6 turns!")
+            print(f"You won in {(count)}/6 turns!")
             you_won = True
             exit
         count = count + 1
     if not you_won:
-        print("X/6 -- Sorry, try again tomorrow!")       
+        print("X/6 - Sorry, try again tomorrow!")       
+
 
 if __name__ == "__main__": 
-
     main()
