@@ -5,6 +5,8 @@ __author__ = "730711512"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
+string_secret: str = "codes"
+string_guess: str = ""
 
 def contains_char(any_length: str, single_character: str) -> bool:
     """Returns True if the single character is found at any index of the first string."""
@@ -22,7 +24,7 @@ def emojified(string_guess: str, string_secret: str) -> str:
     """This function checks for correct emoji matches indices."""
     assert len(string_guess) == len(string_secret)
     emoji: str = ""
-    string_guess_idx = 0
+    string_guess_idx: int = 0
     while string_guess_idx < len(string_secret):
         if string_guess[string_guess_idx] == string_secret[string_guess_idx]:
             emoji += GREEN_BOX
@@ -37,31 +39,28 @@ def emojified(string_guess: str, string_secret: str) -> str:
 
         
 def input_guess(expected_length: int) -> str:
-    secret_word_guess: str = input(f"Enter a {expected_length} character letter word: ")
-    if len(secret_word_guess) != len(expected_length):
-            secret_word_guess = input(f"That wasn't {expected_length} chars! Try again: ")
-    else:
-        return secret_word_guess
+    """Provide a guess of expected length"""
+    guess_input = input(f" Enter a {expected_length} character word: ")
+    while len(guess_input) != len(expected_length):
+        guess_input = input(f" Enter a {(expected_length)} character word: ")
+    return guess_input
 
-string_secret: str = "codes"
 def main() -> None:
     """The extry point of the program and main game loop."""
     # Your code will go here
-    string_guess: str = ""
-    string_secret: str = "codes"
+    you_won = False
     count = 1
-    while string_guess != string_secret:
+    while not you_won and count < 7:
         print(f"===Turn {count}/6 ===")
         string_guess ==input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
-        if count<= 6 and string_guess != string_secret:
-            count += 1
-        elif count >= 1 and string_guess == string_secret:
+        if string_guess == string_secret:
             print(f"you won in {count}/6 turns! ")
-        else: count == 7
-        print("X/6 -- Sorry, try again tomorrow! ")
-        string_guess = string_secret
-            
+            has_won = True
+            exit
+        count += 1
+        if not you_won:
+            print("X/6 -- Sorry, try again tomorrow! ")       
 
 if __name__ == "__main__": 
     main()
