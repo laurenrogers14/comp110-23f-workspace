@@ -8,15 +8,16 @@ YELLOW_BOX: str = "\U0001F7E8"
 string_secret: str = "codes"
 string_guess: str = ""
 
-def contains_char(any_length: str, single_character: str) -> bool:
+def contains_char(string_secret: str, single_character: str) -> bool:
     """Returns True if the single character is found at any index of the first string."""
     assert len(single_character) == 1
     # write a while loop going through each index of any_length.  if the single character matches any of these indexes, you can return True.
-    index = 0
-    while len(any_length) > index:
-        if any_length[index] == single_character:
+    index: int = 0
+    while len(string_secret) > index:
+        if (string_secret[index] == single_character):
             return True
-        index += 1
+        else:
+            index += 1
     return False
 
 def emojified(string_guess: str, string_secret: str) -> str:
@@ -38,7 +39,7 @@ def emojified(string_guess: str, string_secret: str) -> str:
 
         
 def input_guess(expected_length: int) -> str:
-    """Provide a guess of expected length"""
+    """Prompts user for a guess until they give one of the right length."""
     user_input = input(f" Enter a {expected_length} character word:")
     string_secret: str
     while len(user_input) != expected_length:
@@ -46,13 +47,13 @@ def input_guess(expected_length: int) -> str:
     return user_input
 
 def main() -> None:
-    """The extry point of the program and main game loop."""
-    # Your code will go here
-    you_won = False
+    """The extrypoint of the program and main game loop."""
+    you_won: bool = False
     count: int  = 1
     string_secret: str = "codes"
+    string_guess: str = ""
     while not you_won and count < 7:
-        print(f"===Turn {(count)}/6 ===")
+        print(f"=== Turn {(count)}/6 ===")
         string_guess == input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
         if string_guess == string_secret:
@@ -60,8 +61,8 @@ def main() -> None:
             has_won = True
             exit
         count += 1
-        if not you_won:
-            print("X/6 -- Sorry, try again tomorrow!")       
+    if not you_won:
+        print("X/6 -- Sorry, try again tomorrow!")       
 
 if __name__ == "__main__": 
     main()
