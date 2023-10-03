@@ -1,24 +1,24 @@
 """EX03 - Structured Wordle."""
-
 __author__ = "730711512"
 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 string_secret: str = "codes"
+string_guess: str = ""
+
 
 def contains_char(string_secret: str, single_character: str) -> bool:
     """Returns True if the single character is found at any index of the first string."""
     assert len(single_character) == 1
-
     index: int = 0
     while index < len(string_secret):
         if (single_character == string_secret[index]):
             return True
         else:
             index = index + 1
-
     return False
+
 
 def emojified(string_guess: str, string_secret: str) -> str:
     """This function checks for correct emoji matches indices."""
@@ -27,7 +27,7 @@ def emojified(string_guess: str, string_secret: str) -> str:
     emoji: str = ""
     index: int = 0
     while index < len(string_secret):
-        if string_guess[index] == string_secret[index]:
+        if string_secret[index] == string_guess[index]:
             emoji = emoji + GREEN_BOX
         else: 
             word: bool = contains_char(string_secret, string_guess[index])
@@ -46,11 +46,12 @@ def input_guess(expected_length: int) -> str:
         string_guess = input(f" That wasn't {(expected_length)} chars! Try again: ")
     return string_guess
 
+
 def main() -> None:
     """The extrypoint of the program and main game loop."""
-    won = False
     count = 1
-    string_guess: str = ""
+    won = False
+
 
     while not won and count < 6:
         print(f"=== Turn {(count)}/6 ===")
