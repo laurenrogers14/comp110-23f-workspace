@@ -39,21 +39,21 @@ def emojified(string_guess: str, string_secret: str) -> str:
         
 def input_guess(expected_length: int) -> str:
     """Provide a guess of expected length"""
-    string_guess = input(f" Enter a {expected_length} character word:")
+    user_input = input(f" Enter a {expected_length} character word:")
     string_secret: str
-    string_guess: str
-    while len(string_guess) != expected_length:
-        string_guess = input(f" That wasn't {(expected_length)} chars! Try again: ")
-    return expected_length
+    while len(user_input) != expected_length:
+        user_input = input(f" That wasn't {(expected_length)} chars! Try again: ")
+    return user_input
 
 def main() -> None:
     """The extry point of the program and main game loop."""
     # Your code will go here
     you_won = False
-    count = 1
+    count: int  = 1
+    string_secret: str = "codes"
     while not you_won and count < 7:
         print(f"===Turn {(count)}/6 ===")
-        string_guess ==input_guess(len(string_secret))
+        string_guess == input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
         if string_guess == string_secret:
             print(f"you won in {(count)}/6 turns!")
