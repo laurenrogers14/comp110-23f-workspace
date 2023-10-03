@@ -6,7 +6,6 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 string_secret: str = "codes"
-string_guess: str = ""
 
 def contains_char(string_secret: str, single_character: str) -> bool:
     """Returns True if the single character is found at any index of the first string."""
@@ -41,27 +40,28 @@ def emojified(string_guess: str, string_secret: str) -> str:
 
         
 def input_guess(expected_length: int) -> str:
-    """Prompts user for a guess until they give one of the right length."""
-    string_guess = input(f" Enter a {expected_length} character word:")
+    """Provides a guess of the expected length."""
+    string_guess = input(f" Enter a {expected_length} character word: ")
     while len(string_guess) != expected_length:
         string_guess = input(f" That wasn't {(expected_length)} chars! Try again: ")
     return string_guess
 
 def main() -> None:
     """The extrypoint of the program and main game loop."""
-    you_won = False
+    won = False
     count = 1
+    string_guess: str = ""
 
-    while not you_won and count < 6:
+    while not won and count < 6:
         print(f"=== Turn {(count)}/6 ===")
         string_guess == input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
         if string_guess == string_secret:
             print(f"You won in {(count)}/6 turns!")
-            you_won = True
+            won = True
             exit
         count = count + 1
-    if not you_won:
+    if not won:
         print("X/6 - Sorry, try again tomorrow!")       
 
 
