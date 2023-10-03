@@ -11,18 +11,19 @@ string_guess: str = ""
 def contains_char(string_secret: str, single_character: str) -> bool:
     """Returns True if the single character is found at any index of the first string."""
     assert len(single_character) == 1
+
     index: int = 0
     while index < len(string_secret):
         if (single_character == string_secret[index]):
             return True
         else:
             index = index + 1
+
     return False
 
 def emojified(string_guess: str, string_secret: str) -> str:
     """This function checks for correct emoji matches indices."""
     assert len(string_guess) == len(string_secret)
-
 
     emoji: str = ""
     index: int = 0
@@ -51,18 +52,18 @@ def main() -> None:
     you_won = False
     count: int  = 1
 
-
     while not you_won and count < 6:
         print(f"=== Turn {(count)}/6 ===")
         string_guess == input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
         if string_guess == string_secret:
             print(f"you won in {(count)}/6 turns!")
-            has_won = True
+            you_won = True
             exit
-        count += 1
+        count = count + 1
     if not you_won:
         print("X/6 -- Sorry, try again tomorrow!")       
 
 if __name__ == "__main__": 
+
     main()
