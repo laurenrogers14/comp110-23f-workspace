@@ -55,7 +55,7 @@ def main() -> None:
 
     while not won and count < 6:
         print(f"=== Turn {(count)}/6 ===")
-        string_guess == input_guess(len(string_secret))
+        string_guess = input_guess(len(string_secret))
         print(emojified(string_guess, string_secret))
         if string_guess == string_secret:
             print(f"You won in {(count)}/6 turns!")
