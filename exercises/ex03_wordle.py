@@ -52,7 +52,6 @@ def main() -> None:
     count = 1
     won = False
 
-
     while not won and count < 6:
         print(f"=== Turn {(count)}/6 ===")
         string_guess = input_guess(len(string_secret))
