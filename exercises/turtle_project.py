@@ -6,6 +6,7 @@ MAX_SPEED: int = 0
 x: float
 y: float
 
+
 def main() -> None:
     """The entrypoint of my scene."""
     colormode(255)
@@ -28,7 +29,7 @@ def main() -> None:
 
 
 def draw_rectangle(rectangle: Turtle, x: float, y: float) -> None:
-    "Draw the soccer field in the middle of the page."
+    """Draw the soccer field in the middle of the page."""
     rectangle.penup()
     rectangle.goto(x, y)
     rectangle.pendown()
@@ -48,9 +49,9 @@ def draw_rectangle(rectangle: Turtle, x: float, y: float) -> None:
 
 
 def field_lines(lines: Turtle, x: float, y: float) -> None:
-    "Draw the center line of the field inside the rectangle."
+    """Draw the center line of the field inside the rectangle."""
     lines.penup()
-    lines.goto (x, y)
+    lines.goto(x, y)
     lines.pendown()
     lines.forward(500)
     lines.color("white")
@@ -58,7 +59,7 @@ def field_lines(lines: Turtle, x: float, y: float) -> None:
 
 
 def draw_penalty_boxes(rectangles: Turtle, x: float, y: float) -> None:
-    "Draw penalty boxes on each side of the field."
+    """Draw penalty boxes on each side of the field."""
     rectangles.penup()
     rectangles.goto(x, y)
     rectangles.pendown()
@@ -74,9 +75,9 @@ def draw_penalty_boxes(rectangles: Turtle, x: float, y: float) -> None:
 
 
 def draw_center_circle(circle: Turtle, x: float, y: float) -> None:
-    "Draw square in the middle of the field to be the center circle."
+    """Draw square in the middle of the field to be the center circle."""
     circle.penup()
-    circle.goto(x,y)
+    circle.goto(x, y)
     circle.pendown()
     circle.color("white")
     i: int = 0
@@ -87,7 +88,7 @@ def draw_center_circle(circle: Turtle, x: float, y: float) -> None:
         
 
 def draw_half_circle(half_circle: Turtle, x: float, y: float) -> None:
-    "Draw the semi circle at the top of each penalty box on each side of the field."
+    """Draw the semi-circles at the top of each penalty box on each side of the field."""
     half_circle.penup()
     half_circle.goto(x, y)
     half_circle.pendown()
@@ -101,12 +102,8 @@ def draw_half_circle(half_circle: Turtle, x: float, y: float) -> None:
     half_circle.left(90)
     half_circle.color("white")
     
-
 if __name__  == "__main__":
     main()
-
-
-
     
     
 
