@@ -101,13 +101,7 @@ def draw_half_circle(half_circle: Turtle, x: float, y: float) -> None:
     half_circle.forward(55)
     half_circle.left(90)
     half_circle.color("white")
+
     
-if __name__  == "__main__":
-    main()
-    
-    
-
-
-
-
-
+if __name__ == "__main__":
+    main()    
