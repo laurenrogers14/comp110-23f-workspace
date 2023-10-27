@@ -4,7 +4,6 @@ __author__ = "730711512"
 
 from lessons.zip import zip
 
-
 def test_non_empty_lists():
     """Checks to see if the lists in the function returns a dictionary"""
     list1 = []
