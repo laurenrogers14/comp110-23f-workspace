@@ -4,11 +4,7 @@ __author__ = "730711512"
 
 def zip(list1: list[str], list2: list[int]) -> dict[str, int]:
     result_dict: dict[str, int] = {}
-    if len(list1) != len(list2):
-        return {}
-    if list1 == {}:
-        return{}
-    if list2 == {}:
+    if not list1 or not list2 or len(list1) != len(list2):
         return{}
 
     for i in range(len(list1)):
