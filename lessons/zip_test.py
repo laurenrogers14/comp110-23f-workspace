@@ -28,4 +28,3 @@ def test_lists_of_dif_lengths():
     list2 = [1, 2, 3]
     result_dict: dict[str, int] = zip(list1, list2)
     assert result_dict == {}
-    
