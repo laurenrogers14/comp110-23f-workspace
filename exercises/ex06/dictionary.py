@@ -18,25 +18,25 @@ def invert(dict1: dict[str, str]) -> dict[str, str]:
 def favorite_color(dict2: dict[str, str]) -> str: 
     """This function returns the most popular color in the dictionary."""
     color_count = {}
-    most_pop_color = None
+    most_pop_color: str = ""
     max_count = 0
-
-    for name, color in dict2:
-        if color in color_count:
-            color_count[color] += 1
+   
+    for key, value in dict2:
+        if value in color_count:
+            color_count[value] += 1
         else:
             color_count = 1
         
-        if color_count[color] > max_count or (color_count[color] == max_count and dict2[color] == color):
-            max_count = color_count[color]
-            most_pop_color = color
+        if color_count[value] > max_count or (color_count[value] == max_count and dict2[value] == value):
+            max_count = color_count[value]
+            most_pop_color = value
 
     return most_pop_color
 
 
 def count(input_list: list[str]) -> dict[str, int]:
     """This function returns a dictionary of the counts of each of the items in the input list."""
-    result_dict = {}
+    result_dict = dict[str, int] = {}
 
     for elem in input_list:
         if elem in result_dict:
@@ -49,7 +49,7 @@ def count(input_list: list[str]) -> dict[str, int]:
 
 def alphabetizer(input_list2: list[str]) -> dict[str, list[str]]:
     """This function returns a dictionary of the letters and the lists of words that belong to that letter."""
-    result_dict2 = {}
+    result_dict2 = dict[str, list[str]] = {}
 
     for elem in input_list2:
         elem = elem.lower()
@@ -63,7 +63,7 @@ def alphabetizer(input_list2: list[str]) -> dict[str, list[str]]:
     return result_dict2
 
 
-def update_attendance(dict3: dict[str, list[str]], day_of_week: str, student: str):
+def update_attendance(dict3: dict[str, list[str]], day_of_week: str, student: str) -> dict[str, list[str]]:
     """This function should update the new attendance information."""
     if day_of_week in dict3:
         dict3[day_of_week].append(student)
@@ -71,11 +71,3 @@ def update_attendance(dict3: dict[str, list[str]], day_of_week: str, student: st
         dict3[day_of_week] = [student]
     
     return dict3
-
-
-
-
-
-
-
-
