@@ -4,18 +4,18 @@ __author__= "730711512"
 
 from exercises.ex06.dictionary import invert
 
-def test_invert_use_case():
+def test_invert_using_letters():
     input_dict = {'a': 'z', 'b': 'y', 'c': 'x'}
     result = invert(input_dict)
     assert result == {'z': 'a', 'y': 'b', 'x': 'c'}
 
-def test_invert_use_case2():
+def test_invert_using_words():
     input_dict = {'apple': 'cat', 'orange': 'dog'}
     result = invert(input_dict)
     assert result == {'cat': 'apple', 'dog': 'orange'}
 
 
-def test_invert_edge_case():
+def test_invert_with_keys_of_same_value():
     input_dict = {'a': 'z', 'b': 'z'}
     with input_dict.raises(KeyError):
         input_dict = {'a': 'z', 'b': 'z'}
