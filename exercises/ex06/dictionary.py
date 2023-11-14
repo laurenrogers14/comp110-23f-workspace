@@ -55,12 +55,10 @@ def alphabetizer(input_list2: list[str]) -> dict[str, list[str]]:
     result_dict2: dict[str, list[str]] = {}
 
     for elem in input_list2:
-        elem = elem.lower()
-        first_letter = elem[0]
-    
+        first_letter = elem[0].lower()
         if first_letter in result_dict2:
             result_dict2[first_letter].append(elem)
-        if first_letter not in result_dict2:
+        else:
             result_dict2[first_letter] = [elem]
         
     return result_dict2
@@ -69,7 +67,8 @@ def alphabetizer(input_list2: list[str]) -> dict[str, list[str]]:
 def update_attendance(dict3: dict[str, list[str]], day_of_week: str, student: str) -> dict[str, list[str]]:
     """This function should update the new attendance information."""
     if day_of_week in dict3:
-        dict3[day_of_week].append(student)
+        if student not in dict3[day_of_week]:
+            dict3[day_of_week].append(student)
     else:
         dict3[day_of_week] = [student]
     

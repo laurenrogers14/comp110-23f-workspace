@@ -1,4 +1,4 @@
-"""Combing two lists into a dictionry."""
+"""Combing two lists into a dictionary."""
 
 __author__ = "730711512"
 
